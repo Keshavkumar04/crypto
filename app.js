@@ -118,9 +118,9 @@ const currencies = [
   
   currencies.forEach(currency => {
     const ws = new WebSocket(`wss://stream.binance.com:9443/ws/${currency.symbol.toLowerCase()}@ticker`);
-    ws.onopen = () => {
-      console.log(`WebSocket connection established for ${currency.symbol}`);
-    };
+    // ws.onopen = () => {
+    //   // console.log(`WebSocket connection established for ${currency.symbol}`);
+    // };
     ws.onmessage = (event) => {
       const priceDetails = JSON.parse(event.data);
       const latestPrice = parseFloat(priceDetails.c).toFixed(4);
