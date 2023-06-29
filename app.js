@@ -154,40 +154,20 @@ lastPrice[currency.symbol]=latestPrice;
 
   // this is for getting news
 
-  const getNews = async () => {
-    const res = await axios.get('https://newsapi.org/v2/everything?q=bitcoin OR dogecoin OR ethereum OR solana OR usdt OR xrp OR shib &excludeDomains=cointelegraph.com,coindesk.com,newsbtc.com&language=en&sortBy=popularity&pageSize=20&apiKey=a1ef41e950d747da954e2cc954d8bfdb');
-    const articles = res.data.articles;
-    for ( let article of articles){
-      const newpara = document.createElement('p');
-      const newlink = document.createElement('a');
-      newlink.innerText = `📢 ${article.title}`;
-      newlink.href = article.url;
-      newpara.appendChild(newlink);
-      newpara.classList.add('articles');
-      news.appendChild(newpara);
-    };
-  };
+//   const getNews = async () => {
+//     const res = await axios.get('https://newsapi.org/v2/everything?q=bitcoin OR dogecoin OR ethereum OR solana OR usdt OR xrp OR shib &excludeDomains=cointelegraph.com,coindesk.com,newsbtc.com&language=en&sortBy=popularity&pageSize=20&apiKey=a1ef41e950d747da954e2cc954d8bfdb');
+//     const articles = res.data.articles;
+//     for ( let article of articles){
+//       const newpara = document.createElement('p');
+//       const newlink = document.createElement('a');
+//       newlink.innerText = `📢 ${article.title}`;
+//       newlink.href = article.url;
+//       newpara.appendChild(newlink);
+//       newpara.classList.add('articles');
+//       news.appendChild(newpara);
+//     };
+//   };
   
- getNews();
+//  getNews();
   
-  
-
-
-const secondSection = document.querySelector(".prices");
-const firstSection = document.querySelector(".news");
-
-window.addEventListener("scroll", () => {
-  const distance = secondSection.getBoundingClientRect().top;
-  const blurValue = Math.min(distance / 20, 10);
-  const opacityValue = Math.max(1 - (distance / window.innerHeight), 0);
-
-  firstSection.style.setProperty("--blur", `${blurValue}px`);
-  firstSection.style.setProperty("--opacity", opacityValue);
-
-  if (distance < 0) {
-    firstSection.classList.add("blurred");
-  } else {
-    firstSection.classList.remove("blurred");
-  }
-});
 

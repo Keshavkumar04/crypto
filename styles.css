@@ -36,7 +36,7 @@ h2 span {
   }
   
 
-  .news {
+  /* .news {
     
       display: flex;
       flex-direction: column;
@@ -55,7 +55,7 @@ h2 span {
 
 .news a {
     text-decoration: none;
-}
+} */
 
 
 body{
